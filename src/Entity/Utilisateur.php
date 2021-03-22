@@ -37,6 +37,11 @@ class Utilisateur
      */
     private $pwd;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $role;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Utilisateur
     public function setPwd(string $pwd): self
     {
         $this->pwd = $pwd;
+
+        return $this;
+    }
+
+    public function getRole(): ?int
+    {
+        return $this->role;
+    }
+
+    public function setRole(int $role): self
+    {
+        $this->role = $role;
 
         return $this;
     }
