@@ -6,6 +6,7 @@ use App\Entity\Utilisateur;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class InscriptionController extends AbstractController
 {
@@ -22,7 +23,7 @@ class InscriptionController extends AbstractController
     /**
      * @Route("/inscription/ajout", name="inscription_ajout")
      */
-    public function ajout(): Response
+    public function ajout(ValidatorInterface $validator): Response
     {
         // you can fetch the EntityManager via $this->getDoctrine()
         // or you can add an argument to the action: createProduct(EntityManagerInterface $entityManager)
@@ -34,6 +35,11 @@ class InscriptionController extends AbstractController
         $product->setLogin('Bruco.Lolo@gmail.com');
         $product->setPwd('QuatreFois0');
         $product->setRole(0);
+
+        $errors = $validator->validate($product);
+        if (count($errors) > 0) {
+            return new Response((string) $errors, 400);
+        }
 
         // tell Doctrine you want to (eventually) save the Product (no queries yet)
         $entityManager->persist($product);

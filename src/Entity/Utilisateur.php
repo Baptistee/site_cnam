@@ -38,7 +38,7 @@ class Utilisateur
     private $pwd;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=4)
      */
     private $role;
 
