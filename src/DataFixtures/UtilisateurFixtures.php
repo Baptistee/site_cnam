@@ -16,7 +16,7 @@ class UtilisateurFixtures extends Fixture
                     ->setPrenom("Julien")
                     ->setLogin("jhe")
                     ->setPwd("jhe")
-                    ->setRole("0");
+                    ->setRole(0);
 
          $manager->persist($utilisateur0);
 
