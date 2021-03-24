@@ -4,11 +4,18 @@ namespace App\Entity;
 
 use App\Repository\UtilisateurRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=UtilisateurRepository::class)
+ * @UniqueEntity(
+ * fields = {"login"},
+ * message = "le login que vous avez indiqué est déjà utilisé !"
+ * )
  */
-class Utilisateur
+class Utilisateur implements UserInterface
 {
     /**
      * @ORM\Id
@@ -34,11 +41,12 @@ class Utilisateur
 
     /**
      * @ORM\Column(type="string", length=64)
+     * @Assert\Length(min="8", minMessage = "Votre mot de passe doit faire minimum 8 caractères")
      */
     private $pwd;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=4)
      */
     private $role;
 
@@ -76,6 +84,11 @@ class Utilisateur
         return $this->login;
     }
 
+    public function getUsername(): ?string
+    {
+        return $this->login;
+    }
+
     public function setLogin(string $login): self
     {
         $this->login = $login;
@@ -84,6 +97,11 @@ class Utilisateur
     }
 
     public function getPwd(): ?string
+    {
+        return $this->pwd;
+    }
+
+    public function getPassword(): ?string
     {
         return $this->pwd;
     }
@@ -105,5 +123,13 @@ class Utilisateur
         $this->role = $role;
 
         return $this;
+    }
+
+    public function eraseCredentials() {}
+
+    public function getSalt() {}
+
+    public function getRoles(){
+        return ['ROLE_USER'];
     }
 }
