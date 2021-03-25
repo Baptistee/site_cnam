@@ -50,6 +50,8 @@ class Utilisateur implements UserInterface
      */
     private $role;
 
+    private $roles = [];
+
     public function getId(): ?int
     {
         return $this->id;
@@ -113,12 +115,12 @@ class Utilisateur implements UserInterface
         return $this;
     }
 
-    public function getRole(): ?int
+    public function getRole(): ?string
     {
         return $this->role;
     }
 
-    public function setRole(int $role): self
+    public function setRole(string $role): self
     {
         $this->role = $role;
 
@@ -129,7 +131,31 @@ class Utilisateur implements UserInterface
 
     public function getSalt() {}
 
-    public function getRoles(){
-        return ['ROLE_USER'];
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        $roles[] = 'ROLE_USER';
+        $role = $this->role;
+
+        for ($i = 0 ; $i < 4 ; $i++)
+        {
+            if ($role[$i] == 'a')
+            {
+                array_push($roles,'ROLE_ADMIN');
+            }
+            if ($role[$i] == 'b')
+            {
+                array_push($roles,'ROLE_INTERVENANT');
+            }
+            if ($role[$i] == 'c')
+            {
+                array_push($roles,'ROLE_BDE');
+            }
+            if ($role[$i] == 'd')
+            {
+                array_push($roles,'ROLE_USER');
+            }
+        }
+        return array_unique($roles);
     }
 }
