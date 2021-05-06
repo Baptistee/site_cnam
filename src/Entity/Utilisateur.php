@@ -137,7 +137,7 @@ class Utilisateur implements UserInterface
         $roles[] = 'ROLE_USER';
         $role = $this->role;
 
-        for ($i = 0 ; $i < 4 ; $i++)
+        for ($i = 0 ; $i < strlen($role) ; $i++)
         {
             if ($role[$i] == 'a')
             {
