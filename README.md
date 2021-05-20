@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href=""><img src="https://github.com/Baptistee/projet-opera-toulon/blob/devel/git-res/readme/logo.png" alt="logo-site-cnam" alt="re-frame logo" width="500"></a>
+  <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/CNAM_Logo.svg/1280px-CNAM_Logo.svg.png" alt="logo-site-cnam" alt="re-frame logo" width="500"></a>
   <br>
   Projet Site Formation CNAM
   <br>
