@@ -48,7 +48,7 @@
 - email : String (64)
 - adresse : String (128)
 - telephone : String (12)
-- birthday : Date ()
+- date_anniversaire : Date ()
 - lien : String (256)
 - competence : String (256)
 - langue : String ()
