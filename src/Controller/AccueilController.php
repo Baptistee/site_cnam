@@ -57,4 +57,14 @@ class AccueilController extends AbstractController
             'controller_name' => 'AccueilController',
         ]);
     }
+
+    /**
+     * @Route("/calendrier", name="calendrier")
+     */
+    public function calendrier(): Response
+    {
+        return $this->render('accueil/calendrier.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
 }
