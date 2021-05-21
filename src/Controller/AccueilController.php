@@ -17,4 +17,34 @@ class AccueilController extends AbstractController
             'controller_name' => 'AccueilController',
         ]);
     }
+
+    /**
+     * @Route("/informations", name="informations")
+     */
+    public function informations(): Response
+    {
+        return $this->render('accueil/informations.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
+
+    /**
+     * @Route("/projets", name="projets")
+     */
+    public function projets(): Response
+    {
+        return $this->render('accueil/projets.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
+
+    /**
+     * @Route("/cv", name="cv")
+     */
+    public function cv(): Response
+    {
+        return $this->render('accueil/cv.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
 }

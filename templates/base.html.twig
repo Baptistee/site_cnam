@@ -42,9 +42,16 @@
             <li class="nav-item">
                 <a class="nav-link" href="/">Article</a>
             </li>
+            {% if is_granted('ROLE_BDE') %}
             <li class="nav-item">
                 <a class="nav-link" href="/">Créer un Article</a>
             </li>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+            <li class="nav-item">
+                <a class="nav-link" href="/admin">Admin</a>
+            </li>
+            {% endif %}
 
             </ul>
         </div>
