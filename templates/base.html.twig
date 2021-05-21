@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
@@ -14,68 +15,75 @@
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
     </head>
+
     <body>
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="/">CNAM</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/">Accueil
-                </a>
-            </li>
-            {% if not app.user %}
-            <li class="nav-item">
-                <a class="nav-link" href="/connexion">Se connecter</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/inscription">S'inscrire</a> 
-            </li>
-            {% else %}
-            <li class="nav-item">
-                <a class="nav-link" href="/deconnexion">Se deconnecter</a>
-            </li>
-            {% endif %}
-            <li class="nav-item">
-                <a class="nav-link" href="/">Article</a>
-            </li>
-            {% if is_granted('ROLE_BDE') %}
-            <li class="nav-item">
-                <a class="nav-link" href="/">Créer un Article</a>
-            </li>
-            {% endif %}
-            {% if is_granted('ROLE_ADMIN') %}
-            <li class="nav-item">
-                <a class="nav-link" href="/admin">Admin</a>
-            </li>
-            {% endif %}
-
-            </ul>
-        </div>
+            <a class="navbar-brand" href="/">CNAM</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Accueil</a>
+                </li>
+                {% if not app.user %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/connexion">Se connecter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/inscription">S'inscrire</a> 
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/deconnexion">Se deconnecter</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Article</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cv">CV étudiants</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/projets">Projets</a>
+                </li>
+                {% if is_granted('ROLE_BDE') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Créer un Article</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Ajouter mon CV</a>
+                    </li>
+                {% endif %}
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin">Admin</a>
+                    </li>
+                {% endif %}
+                </ul>
+            </div>
         </nav>
+
         <div class="container">
-        
-        {% block body %}{% endblock %}
+            {% block body %}{% endblock %}
         </div>
 
-    <footer class = "page-footer bg-primary">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="/">CNAM</a>
-
-        <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/">Formations</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/">Information</a>
-            </li>
-            </ul>
-        </div>
-    </footer>
+        <footer class = "page-footer bg-primary">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="/">CNAM</a>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/formation">Formation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/informations">Informations</a>
+                </li>
+                </ul>
+            </div>
+        </footer>
 
     </body>
 

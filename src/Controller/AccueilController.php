@@ -47,4 +47,14 @@ class AccueilController extends AbstractController
             'controller_name' => 'AccueilController',
         ]);
     }
+
+    /**
+     * @Route("/formation", name="formation")
+     */
+    public function formation(): Response
+    {
+        return $this->render('accueil/formation.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
 }
