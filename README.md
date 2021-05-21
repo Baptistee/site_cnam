@@ -42,3 +42,16 @@
 ### ArticleBDE
 
 ### ArticleFormation
+
+### CV
+- id : Interger ()
+- email : String (64)
+- adresse : String (128)
+- telephone : String (12)
+- birthday : Date ()
+- lien : String (256)
+- competence : String (256)
+- langue : String ()
+- bio : String (1028)
+- experience : String (1028)
+- formation : String (1028)
