@@ -1,22 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<head>
-<meta charset='utf-8' />
-
-
-  <title>
-    Initialize Globals Demo - Demos | FullCalendar
-  </title>
-
-
-<link href='/assets/demo-to-codepen.css' rel='stylesheet' />
-
+<div id='calendar'></div>
 
   <style>
 
@@ -38,10 +23,12 @@
 
   <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.css' rel='stylesheet' />
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.js'></script>
+{% endblock %}
+  
 
+  
 
-<script src='/assets/demo-to-codepen.js'></script>
-
+{% block javascripts %}  
 <script>
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -109,21 +96,4 @@
   });
 
 </script>
-
-</head>
-<body>
-  <div class='demo-topbar'>
-  <button data-codepen class='codepen-button'>Edit in CodePen</button>
-
-  
-
-  
-    initialization of calendar with browser globals
-  
-</div>
-
-  <div id='calendar'></div>
-</body>
-
-
 {% endblock %}
