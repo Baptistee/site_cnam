@@ -39,16 +39,6 @@ class AccueilController extends AbstractController
     }
 
     /**
-     * @Route("/cv", name="cv")
-     */
-    public function cv(): Response
-    {
-        return $this->render('accueil/cv.html.twig', [
-            'controller_name' => 'AccueilController',
-        ]);
-    }
-
-    /**
      * @Route("/formation", name="formation")
      */
     public function formation(): Response
