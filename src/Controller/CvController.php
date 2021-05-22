@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 class CvController extends AbstractController
 {
     /**
-     * @Route("/", name="cv")
+     * @Route("/cv", name="cv")
      */
     public function index(CvRepository $cv)
     {
