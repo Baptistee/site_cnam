@@ -66,9 +66,13 @@
                     </li>
                 {% endif %}
                 {% if is_granted('ROLE_USER') %}
-                    {% if app.user %}
+                    {% if not app.user.cv %}
                         <li class="nav-item">
                             <a class="nav-link" href="/cv/ajouter">Ajouter mon CV</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cv/ajouter">Modifier mon CV</a>
                         </li>
                     {% endif %}
                 {% endif %}
