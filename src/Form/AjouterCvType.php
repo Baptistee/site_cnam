@@ -18,7 +18,6 @@ class AjouterCvType extends AbstractType
             ->add('date_anniversaire')
             ->add('lien_site')
             ->add('bio')
-            ->add('utilisateur')
         ;
     }
 

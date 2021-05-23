@@ -165,12 +165,12 @@ class Utilisateur implements UserInterface
         return array_unique($roles);
     }
 
-    public function getCv(): ?string
+    public function getCv(): ?Cv
     {
         return $this->cv;
     }
 
-    public function setCv(string $cv): self
+    public function setCv(Cv $cv): self
     {
         $this->cv = $cv;
 
@@ -179,12 +179,13 @@ class Utilisateur implements UserInterface
 
     public function __toString()
     {
-        $format = "Utilisateur (id: %s, nom: %s, prenom: %s, login: %s)";
+        $format = "Utilisateur (id: %s, nom: %s, prenom: %s, login: %s, cv : %s)";
         return sprintf($format,
             $this->id,
             $this->nom,
             $this->prenom,
-            $this->login
+            $this->login,
+            $this->cv
         );
     }
 }

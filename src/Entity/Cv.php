@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Id;
+use Symfony\Component\Security\Core\User\User;
 
 /**
  * @ORM\Entity(repositoryClass=CvRepository::class)
@@ -18,6 +20,7 @@ class Cv
 
     /**
      * @ORM\OneToOne(targetEntity=Utilisateur::class, mappedBy="cv")
+     * @ORM\JoinColumn(name="utilisateur", nullable=false)
      */
     private $utilisateur;
 
@@ -142,10 +145,10 @@ class Cv
 
     public function __toString()
     {
-        $format = "Cv (id: %s, utilisateur: %s, email: %s, bio: %s)";
+        $format = "Cv (id: %s, utilisateur.nom: %s, email: %s, bio: %s)";
         return sprintf($format,
             $this->id,
-            $this->utilisateur,
+            $this->utilisateur->getNom(),
             $this->email,
             $this->bio
         );
