@@ -9,11 +9,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\AjouterCvType;
+use App\Form\ModifierCvType;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Security;
-
-use Psr\Log\LoggerInterface;
+use \Symfony\Component\Form\SubmitButton;
 
 class CvController extends AbstractController
 {
@@ -74,16 +74,45 @@ class CvController extends AbstractController
     /**
      * @Route("/cv/modifier", name="cv-modifier")
      */
-    public function modifier(Cv $cv, Request $request)
+    public function modifier(Request $request)
     {
-        
+        $utilisateur = $this->getDoctrine()
+                ->getRepository(Utilisateur::class)
+                ->find($this->security->getUser());
+
+        $form = $this->createForm(ModifierCvType::class, $utilisateur->getCv());
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $this->getDoctrine()->getManager()->flush();
+        }
+
+        return $this->render('cv/modifier.html.twig', array(
+            'form' => $form->createView(),
+        ));
     }
 
     /**
      * @Route("/cv/supprimer", name="cv-supprimer")
      */
-    public function supprimer(Cv $cv, Request $request)
+    public function supprimer()
     {
-        
+        $utilisateur = $this->getDoctrine()
+                ->getRepository(Utilisateur::class)
+                ->find($this->security->getUser());
+
+        $cv = $utilisateur->getCv();
+        $utilisateur->setCv(new Cv());
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($utilisateur);
+        $em->flush();
+    
+        $em->remove($cv);
+        $em->flush();
+
+        return $this->redirectToRoute('cv');
     }
 }

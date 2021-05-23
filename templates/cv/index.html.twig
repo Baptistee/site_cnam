@@ -23,10 +23,11 @@
                 <td>{{ cv.telephone }}</td>
                 <td>{{ cv.liensite }}</td>
                 <td>{{ cv.bio }}</td>
+            </tr>
         {% else %}
-        <tr>
-            <td colspan=5>Il n'y a pas de CV public pour le moment.</td>
-        </tr>
+            <tr>
+                <td colspan=5>Il n'y a pas de CV public pour le moment.</td>
+            </tr>
         {% endfor %}
         </tbody>
     </thead>

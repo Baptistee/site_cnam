@@ -172,7 +172,14 @@ class Utilisateur implements UserInterface
 
     public function setCv(Cv $cv): self
     {
-        $this->cv = $cv;
+        if ($cv->getEmail() != null)
+        {
+            $this->cv = $cv;
+        }
+        else
+        {
+            $this->cv = null;
+        }
 
         return $this;
     }
