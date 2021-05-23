@@ -50,6 +50,12 @@ class Utilisateur implements UserInterface
      */
     private $role;
 
+    /**
+    * @ORM\OneToOne(targetEntity=Cv::class, cascade={"persist", "remove"}, inversedBy="utilisateur")
+    * @ORM\JoinColumn(name="cv", nullable=true)
+    */
+    private $cv;
+
     private $roles = [];
 
     public function getId(): ?int
@@ -159,8 +165,26 @@ class Utilisateur implements UserInterface
         return array_unique($roles);
     }
 
+    public function getCv(): ?string
+    {
+        return $this->cv;
+    }
+
+    public function setCv(string $cv): self
+    {
+        $this->cv = $cv;
+
+        return $this;
+    }
+
     public function __toString()
     {
-        return $this->prenom;
+        $format = "Utilisateur (id: %s, nom: %s, prenom: %s, login: %s)";
+        return sprintf($format,
+            $this->id,
+            $this->nom,
+            $this->prenom,
+            $this->login
+        );
     }
 }
