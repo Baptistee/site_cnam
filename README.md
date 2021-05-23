@@ -30,6 +30,7 @@
 - login : String (16)
 - pwd : String (64)
 - role : String (4)
+- cv : Cv ()
 
 ### Promo
 
@@ -45,13 +46,29 @@
 
 ### CV
 - id : Interger ()
+- utilisateur : Utilisateur ()
 - email : String (64)
 - adresse : String (255)
 - telephone : String (12)
 - date_anniversaire : Date ()
 - lien_site : String (255)
-- competence : String (256)   # TODO
+- competence : Competence ()
 - langue : String ()          # TODO
 - bio : String (1028)
-- experience : String (1028)  # TODO
-- formation : String (1028)   # TODO
+- experience : Experience     # TODO
+- formation : Formation       # TODO
+- projet : Projet ()          # TODO
+
+### NiveauMaitrise
+- id : Integer ()
+- niveaumaitrise : String (64)
+
+### Competence
+- id : Integer ()
+- cv : Cv ()
+- libelle : String (64)
+- niveaumaitrise : NiveauMaitrise ()
+- experience : Experience () # TODO
+- formation : Formation () # TODO
+- projet : Projet () # TODO
+
