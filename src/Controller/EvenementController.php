@@ -18,10 +18,27 @@ class EvenementController extends AbstractController
     /**
      * @Route("/", name="evenement_index", methods={"GET"})
      */
-    public function index(EvenementRepository $evenementRepository): Response
+    public function index(EvenementRepository $evenement): Response
     {
+        $events = $evenement->findAll();
+        $rdvs = [];
+        foreach($events as $event){
+            $rdvs[] = [
+                'id' => $event->getId(),
+                'start' => $event->getDebut()->format('Y-m-d H:i:s'),
+                'end' => $event->getFin()->format('Y-m-d H:i:s'),
+                'title' => $event->getTitre(),
+                'description' => $event->getDescription(),
+                'backgroundColor' => $event->getCouleurFond(),
+                'borderColor' => $event->getCouleurBordure(),
+                'textColor' => $event->getCouleurTexte(),
+                'allDay' => $event ->getJourneeComplete(),
+            ];
+        }
+        $data = json_encode($rdvs);
+
         return $this->render('evenement/index.html.twig', [
-            'evenements' => $evenementRepository->findAll(),
+            'evenements' => $evenement->findAll(),
         ]);
     }
 
@@ -91,4 +108,5 @@ class EvenementController extends AbstractController
 
         return $this->redirectToRoute('evenement_index');
     }
+
 }
