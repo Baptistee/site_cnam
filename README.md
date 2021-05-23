@@ -68,7 +68,7 @@
 - cv : Cv ()
 - libelle : String (64)
 - niveaumaitrise : NiveauMaitrise ()
-- experience : Experience () # TODO
-- formation : Formation () # TODO
-- projet : Projet () # TODO
+- experience : Experience ()         # TODO
+- formation : Formation ()           # TODO
+- projet : Projet ()                 # TODO
 
