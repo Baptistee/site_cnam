@@ -1,3 +1,7 @@
+Cv:
+    path: /cv
+    controller: App\Controller\CvController::index
+
 Inscription:
     path: /inscription
     controller: App\Controller\InscriptionController::index

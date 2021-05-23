@@ -46,12 +46,12 @@
 ### CV
 - id : Interger ()
 - email : String (64)
-- adresse : String (128)
+- adresse : String (255)
 - telephone : String (12)
-- birthday : Date ()
-- lien : String (256)
-- competence : String (256)
-- langue : String ()
+- date_anniversaire : Date ()
+- lien_site : String (255)
+- competence : String (256)   # TODO
+- langue : String ()          # TODO
 - bio : String (1028)
-- experience : String (1028)
-- formation : String (1028)
+- experience : String (1028)  # TODO
+- formation : String (1028)   # TODO
