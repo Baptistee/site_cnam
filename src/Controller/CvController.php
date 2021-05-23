@@ -7,8 +7,9 @@ use App\Repository\CvRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Form\EditUserType;
+use App\Form\AjouterCvType;
 use Symfony\Component\HttpFoundation\Request;
+use Doctrine\Persistence\ObjectManager;
 
 class CvController extends AbstractController
 {
@@ -25,35 +26,40 @@ class CvController extends AbstractController
     /**
      * @Route("/cv/ajouter", name="cv-ajouter")
      */
-    public function ajouter(): Response
+    public function ajouter(Request $request, ObjectManager $manager)
     {
-        return $this->render('cv/ajouter.html.twig', [
-            'controller_name' => 'CvController',
+        $cv = new Cv();
+
+        $form = $this->createForm(AjouterCvType::class, $cv);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            $manager->persist($cv);
+            $manager->flush();
+
+            return $this->redirectToRoute('cv');
+        }
+
+        return $this->render('cv/ajouter.html.twig',[
+            'form' => $form->createView()
         ]);
     }
 
     /**
-     * @Route("/cv/modifier/{id}", name="cv-modifier")
+     * @Route("/cv/modifier", name="cv-modifier")
      */
-    // TODO : Créer un form CV
-    /*
     public function modifier(Cv $cv, Request $request)
     {
-        $form = $this->createForm(EditUserType::class, $cv);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($cv);
-            $entityManager->flush();
-
-            $this->addFlash('message', 'Utilisateur modifié avec succès');
-            return $this->redirectToRoute('admin_utilisateurs');
-        }
-
-        return $this->render('admin/edituser.html.twig', [
-            'userForm' => $form->createView(),
-        ]);
+        
     }
-    */
+
+    /**
+     * @Route("/cv/supprimer", name="cv-supprimer")
+     */
+    public function supprimer(Cv $cv, Request $request)
+    {
+        
+    }
 }
