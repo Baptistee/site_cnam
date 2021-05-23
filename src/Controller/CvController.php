@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Cv;
+use App\Entity\Utilisateur;
 use App\Repository\CvRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -10,9 +11,22 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Form\AjouterCvType;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\Security\Core\Security;
+
+use Psr\Log\LoggerInterface;
 
 class CvController extends AbstractController
 {
+    /**
+     * @var Security
+     */
+    private $security;
+
+    public function __construct(Security $security)
+    {
+       $this->security = $security;
+    }
+    
     /**
      * @Route("/cv", name="cv")
      */
@@ -34,10 +48,20 @@ class CvController extends AbstractController
 
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()){
-
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $cv->setUtilisateur($this->security->getUser());
             $manager->persist($cv);
             $manager->flush();
+
+            $utilisateur = $this->getDoctrine()
+                ->getRepository(Utilisateur::class)
+                ->find($this->security->getUser());
+            $utilisateur->setCv($cv);
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($utilisateur);
+            $entityManager->flush();
 
             return $this->redirectToRoute('cv');
         }

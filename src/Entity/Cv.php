@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\CvRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Id;
+use Symfony\Component\Security\Core\User\User;
 
 /**
  * @ORM\Entity(repositoryClass=CvRepository::class)
@@ -18,8 +19,8 @@ class Cv
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity=Utilisateur::class, cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\OneToOne(targetEntity=Utilisateur::class, mappedBy="cv")
+     * @ORM\JoinColumn(name="utilisateur", nullable=false)
      */
     private $utilisateur;
 
@@ -140,5 +141,16 @@ class Cv
         $this->bio = $bio;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        $format = "Cv (id: %s, utilisateur.nom: %s, email: %s, bio: %s)";
+        return sprintf($format,
+            $this->id,
+            $this->utilisateur->getNom(),
+            $this->email,
+            $this->bio
+        );
     }
 }
