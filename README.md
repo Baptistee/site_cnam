@@ -31,6 +31,36 @@
 
 ---
 
+### Organisation et architecture du site
+- Nous avons gardé l'architecture proposé par le projet de base Symfony + quelques ajouts. Nous avond donc organisé nos fichiers comme conseillé par Symfony (les controlleurs dans le dossier Controllers, etc ...)
+- Ajout d'un dossier Enum dans src permettant de ranger des classes abstraites avec des méthodes statiques pour gérer des Enum dans l'ensemble du code
+- Nous avons organisé les vues dans le dossier templates. Ce dossier contient des sous-dossiers permettant d'organiser nos vues en fonction des cas d'utilisations. Cela nous permet de trouver le fichier souhaité plus rapidement avec une telle organisation
+- Les routes sont définies dans le code des controllers (au lieu de routes.yaml)
+- La base de données est hébergée sur AlwaysData.net (tout est renseigné dans le .env aucune manip à faire)
+
+---
+
+### Choix des bibliothèques / bundles / modules externes
+
+- WebProfiler : Permet d'avoir des statistiques directement sur le site
+- Monolog
+- Debug : Permets de faire du débogage
+- Maker
+
+- SecurityBundle : Permet la gestion des rôles
+
+- Framework
+- SensioFrameworkExtra
+
+- Twig : Moteur de templates par défaut de symfony
+- TwigExtra
+
+- Doctrine : Permets la manipulation des bases de données
+- DoctrineMigrations
+- DoctrineFixtures
+
+---
+
 ### Fonctionnalités
 
 **Administration**s
@@ -38,12 +68,12 @@
 - [ ] Pouvoir modifier le contenu (via un wysiwyg) des pages du site présentant la formation
 
 **Accés intervenant**
-- [ ] Pouvoir gérer des évènements du planning liés à une promo (échéance de documents à rendre, examens, ...) ou non (GGJ, réunion académique, ...)
+- [x] Pouvoir gérer des évènements du planning liés à une promo (échéance de documents à rendre, examens, ...) ou non (GGJ, réunion académique, ...)
 - [ ] Pouvoir ajouter un projet lié à 1=>n étudiants
 
 **Délégué**
-- [ ] Pouvoir gérer des évènements du planning liés à une promo (échéance de documents à rendre, examens, ...)
-- [ ] Rédiger des informations
+- [x] Pouvoir gérer des évènements du planning liés à une promo (échéance de documents à rendre, examens, ...)
+- [x] Rédiger des informations
 
 **Accés membre BDE**
 - [X] pouvoir gérer des articles d'informations
@@ -54,7 +84,7 @@
 - [ ] Voir les projets
 
 **Public et connecté**
-- [ ] Gestion de son propre compte (pour les  élèves mini CV)
+- [x] Gestion de son propre compte (pour les  élèves mini CV)
 - [ ] Proposer un projet à faire valider par un administrateur
 
 ---
@@ -68,7 +98,7 @@
 - login : String (16)
 - pwd : String (64)
 - role : String (4)
-- cv : Cv ()
+- **cv** : Cv ()
 
 #### Promo
 
@@ -115,3 +145,72 @@
 - formation : Formation ()           # TODO
 - projet : Projet ()                 # TODO
 
+---
+
+### Comment configurer le site
+
+## S'inscrire sur le site
+- TODO
+
+## Ajouter un evenement au calendrier
+- TODO
+
+## Créer un CV
+
+<h3 align="center">
+  <br>
+  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-1.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <br>
+    Lorsque vous êtes connecté vous pouvez créer un CV
+  <br>
+</h3>
+
+<h3 align="center">
+  <br>
+  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-2.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <br>
+    Remplissez les champs obligatoires (email et bio) et appuyez sur le bouton ajouter
+  <br>
+</h3>
+
+<h3 align="center">
+  <br>
+  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-7.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <br>
+    En appuyant sur le bouton Modifier sur la page Mon CV vous pouvez modifier ou supprimer votre CV (l'action supprimer va aussi supprimer vos compétences)
+  <br>
+</h3>
+
+## Ajouter des compétences à son CV
+
+<h3 align="center">
+  <br>
+  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-3.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <br>
+    Depuis la page Mon CV vous pouvez modifier votre CV ou ajouter des compétences. Appuyez sur le bouton Compétences pour accéder à la page des compétences
+  <br>
+</h3>
+
+<h3 align="center">
+  <br>
+  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-4.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <br>
+    Sur la page Mes compétences appuyez sur le bouton Ajouter pour ajouter une compétence à votre CV
+  <br>
+</h3>
+
+<h3 align="center">
+  <br>
+  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-5.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <br>
+    Remplissez tous les champs et appuyez sur le bouton Ajouter
+  <br>
+</h3>
+
+<h3 align="center">
+  <br>
+  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-6.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <br>
+    Depuis la page Mes compétences vous pouvez consulter vos compétences, les modifier ou en supprimer
+  <br>
+</h3>
