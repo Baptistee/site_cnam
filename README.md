@@ -48,6 +48,16 @@
 
 #### Evenement
 
+- id : Integer ()
+- Titre : varchar (255)
+- debut : datetime
+- fin : datetime
+- description : longtext
+- journee_complete : bool
+- couleur_fond : carchar(7)
+- couleur_bordure : carchar(7)
+- couleur_texte : carchar(7)
+
 #### Information
 
 #### ArticleBDE
