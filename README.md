@@ -19,13 +19,13 @@
       <img src="https://img.shields.io/badge/School-CNAM-red">
   </a>
   <a href="">
-    <img src="https://img.shields.io/badge/Student-Baptiste Blanchet-yellow">
+    <img src="https://img.shields.io/badge/Student-Baptiste Blanchet-red">
   </a>
   <a href="">
-    <img src="https://img.shields.io/badge/Student-Julien Hermange-yellow">
+    <img src="https://img.shields.io/badge/Student-Julien Hermange-red">
   </a>
   <a href="">
-    <img src="https://img.shields.io/badge/Student-Aloîs Bruccoleri-yellow">
+    <img src="https://img.shields.io/badge/Student-Aloîs Bruccoleri-red">
   </a>
 </p>
 
