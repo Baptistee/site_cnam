@@ -38,17 +38,17 @@
 
 ### Choix des bibliothèques / bundles / modules externes
 
-- WebProfiler
+- WebProfiler : Permet d'avoir des statistiques directement sur le site
 - Monolog
 - Debug : Permets de faire du débogage
 - Maker
 
-- SecurityBundle
+- SecurityBundle : Permet la gestion des rôles
 
 - Framework
 - SensioFrameworkExtra
 
-- Twig
+- Twig : Moteur de templates par défaut de symfony
 - TwigExtra
 
 - Doctrine : Permets la manipulation des bases de données
