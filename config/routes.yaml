@@ -9,3 +9,7 @@ Inscription:
 index:
     path: /
     controller: App\Controller\AccueilController::index
+
+Evenement :
+    path: /evenement
+    controller: App\Controller\EvenementController::index

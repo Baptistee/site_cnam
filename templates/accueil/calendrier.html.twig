@@ -1,6 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
+<form action={{path('evenement_index')}}>
+    <button class="btn btn-info">Liste Evenement</button>
+</form>
+
+
 <div id='calendar'></div>
 
   <style>
@@ -15,6 +21,10 @@
     #calendar {
       max-width: 1100px;
       margin: 40px auto;
+    }
+
+    button{
+      margin:10px;
     }
 
   </style>
