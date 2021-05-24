@@ -46,7 +46,7 @@ class Utilisateur implements UserInterface
     private $pwd;
 
     /**
-     * @ORM\Column(type="string", length=4)
+     * @ORM\Column(type="string", length=4,nullable=true)
      */
     private $role;
 

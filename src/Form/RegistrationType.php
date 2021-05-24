@@ -17,7 +17,6 @@ class RegistrationType extends AbstractType
             ->add('prenom')
             ->add('login')
             ->add('pwd', PasswordType::class)
-            ->add('role')
         ;
     }
 
