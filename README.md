@@ -161,7 +161,7 @@
 **Ajouter des compétences à son CV**
 <h3 align="center">
   <br>
-  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/CNAM-ANDROID-TP2/main/git-res/images/ra-5.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-1.png" alt="offroad" alt="re-frame logo" width="500"></a>
   <br>
     Exemple de pattern à reprendre
   <br>
