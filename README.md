@@ -37,24 +37,23 @@
 ---
 
 ### Choix des bibliothèques / bundles / modules externes
--
 
-WebProfiler
-Monolog
-Debug : Permets de faire du débogage
-Maker
+- WebProfiler
+- Monolog
+- Debug : Permets de faire du débogage
+- Maker
 
-SecurityBundle
+- SecurityBundle
 
-Framework
-SensioFrameworkExtra
+- Framework
+- SensioFrameworkExtra
 
-Twig
-TwigExtra
+- Twig
+- TwigExtra
 
-Doctrine : Permets la manipulation des bases de données
-DoctrineMigrations
-DoctrineFixtures
+- Doctrine : Permets la manipulation des bases de données
+- DoctrineMigrations
+- DoctrineFixtures
 
 ---
 
