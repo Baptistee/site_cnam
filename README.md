@@ -215,11 +215,11 @@
   <br>
 </h3>
 
-## Ajouter un évènement
+## Ajouter un évènement dans le calendrier
 
 <h3 align="center">
   <br>
-  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-ajout-event-1.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <a href="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-ajout-event-1.png"><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-ajout-event-1.png" alt="offroad" alt="re-frame logo" width="500"></a>
   <br>
     Depuis la page calendrier, cliquez sur le bouton pour voir la liste des évènements.
   <br>
@@ -227,7 +227,7 @@
 
 <h3 align="center">
   <br>
-  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-ajout-event-2.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <a href="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-ajout-event-2.png"><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-ajout-event-2.png" alt="offroad" alt="re-frame logo" width="500"></a>
   <br>
     Ensuite, cliquez sur le lien pour créer un évènements.
   <br>
@@ -235,7 +235,7 @@
 
 <h3 align="center">
   <br>
-  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-ajout-event-3.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <a href="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-ajout-event-3.png"><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-ajout-event-3.png" alt="offroad" alt="re-frame logo" width="500"></a>
   <br>
     Maintenant il ne reste plus qu'a remplir les champs et à sauvegarder.
   <br>
