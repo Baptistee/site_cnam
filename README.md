@@ -63,7 +63,7 @@
 
 ### Fonctionnalités
 
-**Administration**s
+**Administration**
 - [X] Pouvoir gérer les promos, étudiants, intervenants, membres du BDE
 - [ ] Pouvoir modifier le contenu (via un wysiwyg) des pages du site présentant la formation
 
@@ -149,12 +149,6 @@
 
 ### Comment configurer le site
 
-## S'inscrire sur le site
-- TODO
-
-## Ajouter un evenement au calendrier
-- TODO
-
 ## Créer un CV
 
 <h3 align="center">
@@ -238,5 +232,28 @@
   <a href="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-ajout-event-3.png"><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-ajout-event-3.png" alt="offroad" alt="re-frame logo" width="500"></a>
   <br>
     Maintenant il ne reste plus qu'a remplir les champs et à sauvegarder.
+  <br>
+</h3>
+
+## Création d'un compte et gestion 
+<h3 align="center">
+  <br>
+  <a href="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-compte-1.png"><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-compte-1.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <br>
+    Dans le header cliquez sur s'inscrire,entrez vos identifiants de connexion et appuyez sur inscription 
+  <br>
+</h3>
+<h3 align="center">
+  <br>
+  <a href="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-compte-2.png"><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-compte-2.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <br>
+    Connectez vous dans l'onglet se connecter du header
+  <br>
+</h3>
+<h3 align="center">
+  <br>
+  <a href="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-compte-3.png"><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-compte-3.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <br>
+    Si vous avez les permissions admin vous pouvez accéder à la gestion des utilisateurs notamment leurs roles : a correspond à admin, b à intervenant, c à BDE et d à étudiant.
   <br>
 </h3>
