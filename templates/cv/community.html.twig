@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des CV{% endblock %}
+
+{% block body %}
+    <h1>Liste des CV</h1>
+    <table class="table">
+    <thead>
+        <th>nom</th>
+        <th>prenom</th>
+        <th>email</th>
+        <th>adresse</th>
+        <th>telephone</th>
+        <th>portfolio</th>
+        <th>bio</th>
+        <tbody>
+        {% for cv in cvs %}
+            <tr>
+                <td>{{ cv.utilisateur.nom }}</td>
+                <td>{{ cv.utilisateur.prenom }}</td>
+                <td>{{ cv.email }}</td>
+                <td>{{ cv.adresse }}</td>
+                <td>{{ cv.telephone }}</td>
+                <td>{{ cv.liensite }}</td>
+                <td>{{ cv.bio }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan=5>Il n'y a pas de CV public pour le moment.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </thead>
+{% endblock %}

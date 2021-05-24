@@ -1,6 +1,10 @@
+Competence:
+    path: /cv/competence
+    controller: App\Controller\CvController::indexCompetence
+
 Cv:
     path: /cv
-    controller: App\Controller\CvController::index
+    controller: App\Controller\CvController::indexCv
 
 Inscription:
     path: /inscription
