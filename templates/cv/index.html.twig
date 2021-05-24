@@ -3,32 +3,44 @@
 {% block title %}Liste des CV{% endblock %}
 
 {% block body %}
-    <h1>Liste des CV</h1>
-    <table class="table">
-    <thead>
-        <th>nom</th>
-        <th>prenom</th>
-        <th>email</th>
-        <th>adresse</th>
-        <th>telephone</th>
-        <th>portfolio</th>
-        <th>bio</th>
-        <tbody>
-        {% for cv in cvs %}
-            <tr>
-                <td>{{ cv.utilisateur.nom }}</td>
-                <td>{{ cv.utilisateur.prenom }}</td>
-                <td>{{ cv.email }}</td>
-                <td>{{ cv.adresse }}</td>
-                <td>{{ cv.telephone }}</td>
-                <td>{{ cv.liensite }}</td>
-                <td>{{ cv.bio }}</td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan=5>Il n'y a pas de CV public pour le moment.</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </thead>
+    <h1>Mon CV</h1>
+    {% if app.user.cv %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>nom</th>
+                    <th>prenom</th>
+                    <th>email</th>
+                    <th>adresse</th>
+                    <th>telephone</th>
+                    <th>portfolio</th>
+                    <th>bio</th>
+                <tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td>{{ cv.utilisateur.nom }}</td>
+                    <td>{{ cv.utilisateur.prenom }}</td>
+                    <td>{{ cv.email }}</td>
+                    <td>{{ cv.adresse }}</td>
+                    <td>{{ cv.telephone }}</td>
+                    <td>{{ cv.liensite }}</td>
+                    <td>{{ cv.bio }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <form method="post" action="{{ path('cv-modifier') }}">
+            <button class="btn btn-info">Modifier</button>
+        </form>
+        <form method="post" action="{{ path('competences') }}">
+            <button class="btn btn-info">Competences</button>
+        </form>
+    {% else %}
+        <p>Vous n'avez pas encore créé de CV pour le moment.</p>
+        <form method="post" action="{{ path('cv-ajouter') }}">
+            <button class="btn btn-success">Créer</button>
+        </form>
+    {% endif %}
 {% endblock %}

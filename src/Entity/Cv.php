@@ -2,9 +2,9 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\Mapping\Id;
-use Symfony\Component\Security\Core\User\User;
 
 /**
  * @ORM\Entity(repositoryClass=CvRepository::class)
@@ -50,9 +50,20 @@ class Cv
     private $lien_site;
 
     /**
+    * @ORM\OneToMany(targetEntity=Competence::class, cascade={"persist", "remove"}, mappedBy="cv")
+    * @ORM\JoinColumn(name="competences", nullable=true)
+    */
+    private $competences;
+
+    /**
      * @ORM\Column(type="string", length=1028)
      */
     private $bio;
+
+    public function __construct()
+    {
+        $this->competences = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -129,6 +140,19 @@ class Cv
         $this->lien_site = $lien_site;
 
         return $this;
+    }
+
+    public function addCompetence(Competence $competence): self
+    {
+        $this->competences->add($competence);
+        $competence->setCv($this);
+
+        return $this;
+    }
+
+    public function getCompetences(): Collection
+    {
+        return $this->competences;
     }
 
     public function getBio(): ?string
