@@ -149,10 +149,10 @@
 
 ### Comment configurer le site
 
-**S'inscrire sur le site**
+## S'inscrire sur le site
 - TODO
 
-**Ajouter un evenement au calendrier**
+## Ajouter un evenement au calendrier
 - TODO
 
 ## Créer un CV
