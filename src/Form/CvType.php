@@ -17,7 +17,6 @@ class CvType extends AbstractType
             ->add('adresse')
             ->add('telephone')
             ->add('date_anniversaire', DateType::class, array(
-                'widget' => 'choice',
                 'years' => range(date('Y'), date('Y')-130)
             ))
             ->add('lien_site')
