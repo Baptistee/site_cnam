@@ -53,7 +53,7 @@
 - [ ] Voir le CV des élèves (chaque élève peut avoir une option pour dire si son CV est public ou non)
 - [ ] Voir les projets
 
-**Connecté**
+**Public et connecté**
 - [ ] Gestion de son propre compte (pour les  élèves mini CV)
 - [ ] Proposer un projet à faire valider par un administrateur
 
