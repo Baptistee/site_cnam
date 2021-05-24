@@ -97,7 +97,7 @@
 - login : String (16)
 - pwd : String (64)
 - role : String (4)
-- cv : Cv ()
+- **cv** : Cv ()
 
 #### Promo
 
