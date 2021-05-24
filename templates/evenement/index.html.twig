@@ -28,22 +28,22 @@
                 <td>{{ evenement.debut ? evenement.debut|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ evenement.fin ? evenement.fin|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ evenement.description }}</td>
-                <td>{{ evenement.journeeComplete ? 'Yes' : 'No' }}</td>
+                <td>{{ evenement.journeeComplete ? 'Oui' : 'Non' }}</td>
                 <td>{{ evenement.couleurFond }}</td>
                 <td>{{ evenement.couleurBordure }}</td>
                 <td>{{ evenement.couleurTexte }}</td>
                 <td>
-                    <a href="{{ path('evenement_show', {'id': evenement.id}) }}">show</a>
-                    <a href="{{ path('evenement_edit', {'id': evenement.id}) }}">edit</a>
+                    <a href="{{ path('evenement_show', {'id': evenement.id}) }}">afficher</a>
+                    <a href="{{ path('evenement_edit', {'id': evenement.id}) }}">editer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="10">no records found</td>
+                <td colspan="10">Pas d'evenement</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('evenement_new') }}">Create new</a>
+    <a href="{{ path('evenement_new') }}">Créer un nouveau</a>
 {% endblock %}
