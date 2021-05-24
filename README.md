@@ -155,7 +155,7 @@
 **Ajouter un evenement au calendrier**
 - TODO
 
-**Créer un CV**
+## Créer un CV
 
 <h3 align="center">
   <br>
@@ -181,7 +181,7 @@
   <br>
 </h3>
 
-**Ajouter des compétences à son CV**
+## Ajouter des compétences à son CV
 
 <h3 align="center">
   <br>
