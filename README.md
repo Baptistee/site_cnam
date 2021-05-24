@@ -36,6 +36,7 @@
 - Ajout d'un dossier Enum dans src permettant de ranger des classes abstraites avec des méthodes statiques pour gérer des Enum dans l'ensemble du code
 - Nous avons organisé les vues dans le dossier templates. Ce dossier contient des sous-dossiers permettant d'organiser nos vues en fonction des cas d'utilisations. Cela nous permet de trouver le fichier souhaité plus rapidement avec une telle organisation
 - Les routes sont définies dans le code des controllers (au lieu de routes.yaml)
+- La base de données est hébergée sur AlwaysData.net (tout est renseigné dans le .env aucune manip à faire)
 
 ---
 
