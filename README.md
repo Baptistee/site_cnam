@@ -61,13 +61,13 @@
 
 ### NiveauMaitrise
 - id : Integer ()
-- niveaumaitrise : String (64)
+- niveau_maitrise : String (64)
 
 ### Competence
 - id : Integer ()
 - cv : Cv ()
 - libelle : String (64)
-- niveaumaitrise : NiveauMaitrise ()
+- niveau_maitrise : NiveauMaitrise ()
 - experience : Experience ()         # TODO
 - formation : Formation ()           # TODO
 - projet : Projet ()                 # TODO
