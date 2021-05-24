@@ -8,13 +8,24 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'D:/julien/bureau/etude/bac +5/Developpement WEB/site_cnam/src/Controller/ArticleController.php'|file_link(0) }}">src/Controller/ArticleController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'D:/julien/bureau/etude/bac +5/Developpement WEB/site_cnam/templates/article/index.html.twig'|file_link(0) }}">templates/article/index.html.twig</a></code></li>
-    </ul>
+<div class="jumbotron text-center">
+    <h1>Mon premier formulaire</h1>
+    <p>Un formulaire d'article</p>
+</div>
+<div class="container">
+    <div class="row">
+        <table>
+            <tbody>
+            <tr>
+                <th>Titre :</th>
+                <td>{{ article.Titre }}</td>
+            </tr>
+            <tr>
+                <th>Description :</th>
+                <td>{{ article.Description }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 {% endblock %}
