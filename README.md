@@ -31,6 +31,16 @@
 
 ---
 
+### Architecture du site
+-
+
+---
+
+### Choix des bibliothèques / bundles / modules externes
+-
+
+---
+
 ### Fonctionnalités
 
 **Administration**
@@ -54,7 +64,7 @@
 - [ ] Voir les projets
 
 **Public et connecté**
-- [ ] Gestion de son propre compte (pour les  élèves mini CV)
+- [x] Gestion de son propre compte (pour les  élèves mini CV)
 - [ ] Proposer un projet à faire valider par un administrateur
 
 ---
@@ -115,3 +125,24 @@
 - formation : Formation ()           # TODO
 - projet : Projet ()                 # TODO
 
+---
+
+### Comment configurer le site
+
+**S'inscrire sur le site**
+- TODO
+
+**Ajouter un evenement au calendrier**
+- TODO
+
+**Créer un CV**
+- TODO
+
+**Ajouter des compétences à son CV**
+<h3 align="center">
+  <br>
+  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/CNAM-ANDROID-TP2/main/git-res/images/ra-5.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <br>
+    Exemple de pattern à reprendre
+  <br>
+</h3>
