@@ -32,6 +32,11 @@ class Article
      */
     private $Created_at;
 
+    public function __construct()
+    {
+        $this->Created_at = new \DateTime();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
