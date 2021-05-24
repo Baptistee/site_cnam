@@ -150,6 +150,16 @@ class Cv
         return $this;
     }
 
+    public function removeCompetence(Competence $competence): self
+    {
+        if ($this->competences->contains($competence))
+        {
+            $this->competences->removeElement($competence);
+        }
+    
+        return $this;
+    }
+
     public function getCompetences(): Collection
     {
         return $this->competences;

@@ -6,11 +6,11 @@ use App\Entity\Cv;
 use App\Entity\Utilisateur;
 use App\Entity\Competence;
 use App\Repository\CvRepository;
+use App\Repository\CompetenceRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Form\AjouterCvType;
-use App\Form\ModifierCvType;
-use App\Form\AjouterCompetenceType;
+use App\Form\CvType;
+use App\Form\CompetenceType;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Security;
@@ -58,7 +58,7 @@ class CvController extends AbstractController
     {
         $cv = new Cv();
 
-        $form = $this->createForm(AjouterCvType::class, $cv);
+        $form = $this->createForm(CvType::class, $cv);
 
         $form->handleRequest($request);
 
@@ -94,7 +94,7 @@ class CvController extends AbstractController
                 ->getRepository(Utilisateur::class)
                 ->find($this->security->getUser());
 
-        $form = $this->createForm(ModifierCvType::class, $utilisateur->getCv());
+        $form = $this->createForm(CvType::class, $utilisateur->getCv());
 
         $form->handleRequest($request);
 
@@ -133,7 +133,7 @@ class CvController extends AbstractController
     /**
      * @Route("/cv/competence", name="competences")
      */
-    public function indexCompetences()
+    public function indexCompetences(CompetenceRepository $competences)
     {
         return $this->render("cv/competence/index.html.twig", [
             'competences' => $this->getDoctrine()
@@ -142,6 +142,15 @@ class CvController extends AbstractController
                 ->getCv()
                 ->getCompetences()
         ]);
+
+        // return $this->render("cv/competence/index.html.twig", [
+        //     'competences' => $competences->find(
+        //         $this->getDoctrine()
+        //         ->getRepository(Utilisateur::class)
+        //         ->find($this->security->getUser())
+        //         ->getCv()->getId()
+        //     )
+        // ]);
     }
 
     /**
@@ -151,7 +160,7 @@ class CvController extends AbstractController
     {
         $competence = new Competence();
 
-        $form = $this->createForm(AjouterCompetenceType::class, $competence);
+        $form = $this->createForm(CompetenceType::class, $competence);
 
         $form->handleRequest($request);
 
@@ -161,12 +170,8 @@ class CvController extends AbstractController
                 ->getRepository(Utilisateur::class)
                 ->find($this->security->getUser());
             $cv = $utilisateur->getCv();
-            // $competence->setCv($cv);
-            // $manager->persist($competence);
-            // $manager->flush();
 
             $cv->addCompetence($competence);
-            // $entityManager = $this->getDoctrine()->getManager();
             $manager->persist($cv);
             $manager->flush();
 
@@ -181,8 +186,44 @@ class CvController extends AbstractController
     /**
      * @Route("/cv/modifier/{id}", name="competence-modifier")
      */
-    public function modifierCompetence(Request $request)
+    public function modifierCompetence(Competence $competence, Request $request)
     {
-        return $this->redirectToRoute('cv');
+        $form = $this->createForm(CompetenceType::class, $competence);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($competence);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('competences');
+        }
+        
+        return $this->render('cv/competence/modifier.html.twig', [
+            'form' => $form->createView(), 'competence' => $competence
+        ]);
+    }
+
+    /**
+     * @Route("/cv/competence/supprimer/{id}", name="competence-supprimer")
+     */
+    public function supprimerCompetence(Competence $competence)
+    {
+        $utilisateur = $this->getDoctrine()
+                ->getRepository(Utilisateur::class)
+                ->find($this->security->getUser());
+
+        $cv = $utilisateur->getCv();
+        $cv->removeCompetence($competence);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($cv); // pas besoin de persist avec le lien bdd ?
+        $em->flush();
+    
+        $em->remove($competence);
+        $em->flush();
+
+        return $this->redirectToRoute('competences');
     }
 }
