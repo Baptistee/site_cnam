@@ -38,12 +38,12 @@
 - [ ] Pouvoir modifier le contenu (via un wysiwyg) des pages du site présentant la formation
 
 **Accés intervenant**
-- [ ] Pouvoir gérer des évènements du planning liés à une promo (échéance de documents à rendre, examens, ...) ou non (GGJ, réunion académique, ...)
+- [x] Pouvoir gérer des évènements du planning liés à une promo (échéance de documents à rendre, examens, ...) ou non (GGJ, réunion académique, ...)
 - [ ] Pouvoir ajouter un projet lié à 1=>n étudiants
 
 **Délégué**
-- [ ] Pouvoir gérer des évènements du planning liés à une promo (échéance de documents à rendre, examens, ...)
-- [ ] Rédiger des informations
+- [x] Pouvoir gérer des évènements du planning liés à une promo (échéance de documents à rendre, examens, ...)
+- [x] Rédiger des informations
 
 **Accés membre BDE**
 - [ ] pouvoir gérer des articles d'informations
