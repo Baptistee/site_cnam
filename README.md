@@ -31,6 +31,34 @@
 
 ---
 
+### Fonctionnalités
+
+**Administration**
+- [ ] Pouvoir gérer les promos, étudiants, intervenants, membres du BDE
+- [ ] Pouvoir modifier le contenu (via un wysiwyg) des pages du site présentant la formation
+
+**Accés intervenant**
+- [ ] Pouvoir gérer des évènements du planning liés à une promo (échéance de documents à rendre, examens, ...) ou non (GGJ, réunion académique, ...)
+- [ ] Pouvoir ajouter un projet lié à 1=>n étudiants
+
+**Délégué**
+- [ ] Pouvoir gérer des évènements du planning liés à une promo (échéance de documents à rendre, examens, ...)
+- [ ] Rédiger des informations
+
+**Accés membre BDE**
+- [ ] pouvoir gérer des articles d'informations
+
+**Public et non connecté**
+- [ ] Voir la présentation de la formation
+- [ ] Voir le CV des élèves (chaque élève peut avoir une option pour dire si son CV est public ou non)
+- [ ] Voir les projets
+
+**Connecté**
+- [ ] Gestion de son propre compte (pour les  élèves mini CV)
+- [ ] Proposer un projet à faire valider par un administrateur
+
+---
+
 ### Base de données
 
 #### Utilisateur
@@ -47,7 +75,6 @@
 #### Projet
 
 #### Evenement
-
 - id : Integer ()
 - Titre : varchar (255)
 - debut : datetime
@@ -66,13 +93,13 @@
 
 #### CV
 - id : Interger ()
-- utilisateur : Utilisateur ()
+- **utilisateur** : Utilisateur ()
 - email : String (64)
 - adresse : String (255)
 - telephone : String (12)
 - date_anniversaire : Date ()
 - lien_site : String (255)
-- competence : Competence ()
+- **competence** : Competence ()
 - langue : String ()          # TODO
 - bio : String (1028)
 - experience : Experience     # TODO
@@ -81,7 +108,7 @@
 
 #### Competence
 - id : Integer ()
-- cv : Cv ()
+- **cv** : Cv ()
 - libelle : String (64)
 - niveau_maitrise : Integer ()
 - experience : Experience ()         # TODO
