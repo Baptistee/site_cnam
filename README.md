@@ -159,7 +159,7 @@
 
 <h3 align="center">
   <br>
-  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-1.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <a href="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-1.png"><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-1.png" alt="offroad" alt="re-frame logo" width="500"></a>
   <br>
     Lorsque vous êtes connecté vous pouvez créer un CV
   <br>
@@ -167,7 +167,7 @@
 
 <h3 align="center">
   <br>
-  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-2.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <a href="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-2.png"><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-2.png" alt="offroad" alt="re-frame logo" width="500"></a>
   <br>
     Remplissez les champs obligatoires (email et bio) et appuyez sur le bouton ajouter
   <br>
@@ -175,7 +175,7 @@
 
 <h3 align="center">
   <br>
-  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-7.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <a href="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-7.png"><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-7.png" alt="offroad" alt="re-frame logo" width="500"></a>
   <br>
     En appuyant sur le bouton Modifier sur la page Mon CV vous pouvez modifier ou supprimer votre CV (l'action supprimer va aussi supprimer vos compétences)
   <br>
@@ -185,7 +185,7 @@
 
 <h3 align="center">
   <br>
-  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-3.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <a href="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-3.png"><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-3.png" alt="offroad" alt="re-frame logo" width="500"></a>
   <br>
     Depuis la page Mon CV vous pouvez modifier votre CV ou ajouter des compétences. Appuyez sur le bouton Compétences pour accéder à la page des compétences
   <br>
@@ -193,7 +193,7 @@
 
 <h3 align="center">
   <br>
-  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-4.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <a href="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-4.png"><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-4.png" alt="offroad" alt="re-frame logo" width="500"></a>
   <br>
     Sur la page Mes compétences appuyez sur le bouton Ajouter pour ajouter une compétence à votre CV
   <br>
@@ -201,7 +201,7 @@
 
 <h3 align="center">
   <br>
-  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-5.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <a href="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-5.png"><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-5.png" alt="offroad" alt="re-frame logo" width="500"></a>
   <br>
     Remplissez tous les champs et appuyez sur le bouton Ajouter
   <br>
@@ -209,8 +209,34 @@
 
 <h3 align="center">
   <br>
-  <a href=""><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-6.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <a href="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-6.png"><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-cv-6.png" alt="offroad" alt="re-frame logo" width="500"></a>
   <br>
     Depuis la page Mes compétences vous pouvez consulter vos compétences, les modifier ou en supprimer
+  <br>
+</h3>
+
+## Ajouter un évènement dans le calendrier
+
+<h3 align="center">
+  <br>
+  <a href="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-ajout-event-1.png"><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-ajout-event-1.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <br>
+    Depuis la page calendrier, cliquez sur le bouton pour voir la liste des évènements.
+  <br>
+</h3>
+
+<h3 align="center">
+  <br>
+  <a href="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-ajout-event-2.png"><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-ajout-event-2.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <br>
+    Ensuite, cliquez sur le lien pour créer un évènements.
+  <br>
+</h3>
+
+<h3 align="center">
+  <br>
+  <a href="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-ajout-event-3.png"><img src="https://raw.githubusercontent.com/Baptistee/site_cnam/main/git-res/images/tuto-ajout-event-3.png" alt="offroad" alt="re-frame logo" width="500"></a>
+  <br>
+    Maintenant il ne reste plus qu'a remplir les champs et à sauvegarder.
   <br>
 </h3>
