@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="jumbotron text-center">
+    <h1>Article</h1>
+    <p>Modifier</p>
+</div>
+<div class="container">
+    <div class="row">
+        {{ form_start(form) }}
+        <table>
+            <tbody>
+            <tr>
+                <th>Titre:</th>
+                <td>{{ form_widget(form.titre) }}</td>
+            </tr>
+            <tr>
+                <th>Description:</th>
+                <td>{{ form_widget(form.description) }}</td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>{{ form_widget(form.save) }}</td>
+            </tr>
+            </tbody>
+        </table>
+        {{ form_end(form) }}
+    </div>
+</div>
+
+{% endblock %}

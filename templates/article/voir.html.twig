@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1> Creation article </h1>
+
+<div class="jumbotron text-center">
+    <h1>Article</h1>
+    <p>Affichage</p>
+</div>
+<div class="container">
+    <div class="row">
+        <table>
+            <tbody>
+            <tr>
+                <th>Titre :</th>
+                <td>{{ Article.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description :</th>
+                <td>{{ Article.description }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
