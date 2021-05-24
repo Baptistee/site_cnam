@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de vos compétences{% endblock %}
+
+{% block body %}
+    <form method="post" action="{{ path('cv') }}">
+        <button class="btn btn-info">Retour à mon CV</button>
+    </form>
+    <h1>Mes compétences</h1>
+    {% if app.user.cv %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>libelle</th>
+                    <th>niveau de maîtrise</th>
+                    <th>Modifier</th>
+                <tr>
+            </thead>
+            
+            <tbody>
+            {% for competence in competences %}
+                <tr>
+                    <td>{{ competence.libelle }}</td>
+                    <td>{{ competence.niveauMaitriseToString }}</td>
+                    <td>
+                        <form method="post" action="{{ path('competence-modifier', {'id': competence.id}) }}">
+                            <button class="btn btn-warning">Modifier</button>
+                        </form>
+                    </td>
+                </tr>
+            {% else %}
+                <p>Vous n'avez pas encore ajouté de compétence.</p>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+        <form method="post" action="{{ path('competence-ajouter') }}">
+            <button class="btn btn-success">Ajouter</button>
+        </form>
+{% endblock %}

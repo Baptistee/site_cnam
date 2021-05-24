@@ -6,8 +6,9 @@ use App\Entity\Cv;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
-class AjouterCvType extends AbstractType
+class CvType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -15,10 +16,11 @@ class AjouterCvType extends AbstractType
             ->add('email')
             ->add('adresse')
             ->add('telephone')
-            ->add('date_anniversaire')
+            ->add('date_anniversaire', DateType::class, array(
+                'years' => range(date('Y'), date('Y')-130)
+            ))
             ->add('lien_site')
             ->add('bio')
-            ->add('utilisateur')
         ;
     }
 

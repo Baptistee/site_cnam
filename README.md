@@ -19,39 +19,72 @@
       <img src="https://img.shields.io/badge/School-CNAM-red">
   </a>
   <a href="">
-    <img src="https://img.shields.io/badge/Version-0.1-yellow">
+    <img src="https://img.shields.io/badge/Student-Baptiste Blanchet-red">
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/badge/Student-Julien Hermange-red">
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/badge/Student-Aloîs Bruccoleri-red">
   </a>
 </p>
 
-### Utilisateur
+---
+
+### Base de données
+
+#### Utilisateur
 - id : Integer ()
 - nom : String (16)
 - prenom : String (16)
 - login : String (16)
 - pwd : String (64)
 - role : String (4)
+- cv : Cv ()
 
-### Promo
+#### Promo
 
-### Projet
+#### Projet
 
-### Evenement
+#### Evenement
 
-### Information
+- id : Integer ()
+- Titre : varchar (255)
+- debut : datetime
+- fin : datetime
+- description : longtext
+- journee_complete : bool
+- couleur_fond : carchar(7)
+- couleur_bordure : carchar(7)
+- couleur_texte : carchar(7)
 
-### ArticleBDE
+#### Information
 
-### ArticleFormation
+#### ArticleBDE
 
-### CV
+#### ArticleFormation
+
+#### CV
 - id : Interger ()
+- utilisateur : Utilisateur ()
 - email : String (64)
 - adresse : String (255)
 - telephone : String (12)
 - date_anniversaire : Date ()
 - lien_site : String (255)
-- competence : String (256)   # TODO
+- competence : Competence ()
 - langue : String ()          # TODO
 - bio : String (1028)
-- experience : String (1028)  # TODO
-- formation : String (1028)   # TODO
+- experience : Experience     # TODO
+- formation : Formation       # TODO
+- projet : Projet ()          # TODO
+
+#### Competence
+- id : Integer ()
+- cv : Cv ()
+- libelle : String (64)
+- niveau_maitrise : Integer ()
+- experience : Experience ()         # TODO
+- formation : Formation ()           # TODO
+- projet : Projet ()                 # TODO
+

@@ -2,7 +2,8 @@
 
 namespace App\Entity;
 
-use App\Repository\CvRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -18,8 +19,8 @@ class Cv
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity=Utilisateur::class, cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\OneToOne(targetEntity=Utilisateur::class, mappedBy="cv")
+     * @ORM\JoinColumn(name="utilisateur", nullable=false)
      */
     private $utilisateur;
 
@@ -49,9 +50,20 @@ class Cv
     private $lien_site;
 
     /**
+    * @ORM\OneToMany(targetEntity=Competence::class, cascade={"persist", "remove"}, mappedBy="cv")
+    * @ORM\JoinColumn(name="competences", nullable=true)
+    */
+    private $competences;
+
+    /**
      * @ORM\Column(type="string", length=1028)
      */
     private $bio;
+
+    public function __construct()
+    {
+        $this->competences = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -130,6 +142,29 @@ class Cv
         return $this;
     }
 
+    public function addCompetence(Competence $competence): self
+    {
+        $this->competences->add($competence);
+        $competence->setCv($this);
+
+        return $this;
+    }
+
+    public function removeCompetence(Competence $competence): self
+    {
+        if ($this->competences->contains($competence))
+        {
+            $this->competences->removeElement($competence);
+        }
+    
+        return $this;
+    }
+
+    public function getCompetences(): Collection
+    {
+        return $this->competences;
+    }
+
     public function getBio(): ?string
     {
         return $this->bio;
@@ -140,5 +175,16 @@ class Cv
         $this->bio = $bio;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        $format = "Cv (id: %s, utilisateur.nom: %s, email: %s, bio: %s)";
+        return sprintf($format,
+            $this->id,
+            $this->utilisateur->getNom(),
+            $this->email,
+            $this->bio
+        );
     }
 }
