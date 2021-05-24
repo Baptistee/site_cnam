@@ -12,6 +12,7 @@
             <thead>
                 <tr>
                     <th>libelle</th>
+                    <th>niveau de maîtrise</th>
                     <th>Modifier</th>
                 <tr>
             </thead>
@@ -20,6 +21,7 @@
             {% for competence in competences %}
                 <tr>
                     <td>{{ competence.libelle }}</td>
+                    <td>{{ competence.niveauMaitriseToString }}</td>
                     <td>
                         <form method="post" action="{{ path('competence-modifier', {'id': competence.id}) }}">
                             <button class="btn btn-warning">Modifier</button>

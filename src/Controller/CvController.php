@@ -6,7 +6,6 @@ use App\Entity\Cv;
 use App\Entity\Utilisateur;
 use App\Entity\Competence;
 use App\Repository\CvRepository;
-use App\Repository\CompetenceRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\CvType;
@@ -101,6 +100,8 @@ class CvController extends AbstractController
         if ($form->isSubmitted() && $form->isValid())
         {
             $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('cv');
         }
 
         return $this->render('cv/modifier.html.twig', array(
@@ -133,7 +134,7 @@ class CvController extends AbstractController
     /**
      * @Route("/cv/competence", name="competences")
      */
-    public function indexCompetences(CompetenceRepository $competences)
+    public function indexCompetences()
     {
         return $this->render("cv/competence/index.html.twig", [
             'competences' => $this->getDoctrine()
@@ -142,15 +143,6 @@ class CvController extends AbstractController
                 ->getCv()
                 ->getCompetences()
         ]);
-
-        // return $this->render("cv/competence/index.html.twig", [
-        //     'competences' => $competences->find(
-        //         $this->getDoctrine()
-        //         ->getRepository(Utilisateur::class)
-        //         ->find($this->security->getUser())
-        //         ->getCv()->getId()
-        //     )
-        // ]);
     }
 
     /**

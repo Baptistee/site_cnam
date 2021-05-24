@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Enum\NiveauMaitriseEnum;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -26,6 +27,11 @@ class Competence
      * @ORM\Column(type="string", length=64)
      */
     private $libelle;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $niveau_maitrise;
 
     public function getId(): ?int
     {
@@ -52,6 +58,23 @@ class Competence
     public function setLibelle(string $libelle): self
     {
         $this->libelle = $libelle;
+
+        return $this;
+    }
+
+    public function getNiveauMaitrise(): ?int
+    {
+        return $this->niveau_maitrise;
+    }
+
+    public function getNiveauMaitriseToString(): ?string
+    {
+        return NiveauMaitriseEnum::getName($this->niveau_maitrise);
+    }
+
+    public function setNiveauMaitrise(int $niveau_maitrise): self
+    {
+        $this->niveau_maitrise = $niveau_maitrise;
 
         return $this;
     }
