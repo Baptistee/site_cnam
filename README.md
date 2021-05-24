@@ -33,8 +33,8 @@
 
 ### Fonctionnalités
 
-**Administration**
-- [ ] Pouvoir gérer les promos, étudiants, intervenants, membres du BDE
+**Administration**s
+- [X] Pouvoir gérer les promos, étudiants, intervenants, membres du BDE
 - [ ] Pouvoir modifier le contenu (via un wysiwyg) des pages du site présentant la formation
 
 **Accés intervenant**
@@ -46,7 +46,7 @@
 - [ ] Rédiger des informations
 
 **Accés membre BDE**
-- [ ] pouvoir gérer des articles d'informations
+- [X] pouvoir gérer des articles d'informations
 
 **Public et non connecté**
 - [ ] Voir la présentation de la formation

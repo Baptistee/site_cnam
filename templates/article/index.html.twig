@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ArticleController!{% endblock %}
+{% block title %}Article{% endblock %}
 
 {% block body %}
 <style>
@@ -21,8 +21,8 @@
                     <th>Titre</th>
                     <th>Description</th>
                     {% if is_granted('ROLE_BDE') %}
-                    <th>Delete</th>
-                    <th>Update</th>
+                    <th>Supprimer</th>
+                    <th>Mettre à jour</th>
                     {% endif %}
                 </tr>
                 </thead>
@@ -32,15 +32,15 @@
                         <td>{{ article.titre }}</td>
                         <td>{{ article.description | slice(0, 20) }}...</td>
                         {% if is_granted('ROLE_BDE') %}
-                        <td><a href="article/supprimer/{{ article.id }}">Delete</a></td>
-                        <td><a href="article/modifier/{{ article.id }}">Update</a></td>
+                        <td><a href="article/supprimer/{{ article.id }}">Supprimer</a></td>
+                        <td><a href="article/modifier/{{ article.id }}">Mettre à jour</a></td>
                         {% endif %}
                     </tr>
                 {% endfor %}
                 </tbody>
             </table>
         {% else %}
-            <p>No article found.</p>
+            <p>Pas d'article</p>
         {% endif %}
     </div>
 </div>
