@@ -23,7 +23,11 @@
   </a>
 </p>
 
-### Utilisateur
+---
+
+### Base de données
+
+#### Utilisateur
 - id : Integer ()
 - nom : String (16)
 - prenom : String (16)
@@ -32,19 +36,19 @@
 - role : String (4)
 - cv : Cv ()
 
-### Promo
+#### Promo
 
-### Projet
+#### Projet
 
-### Evenement
+#### Evenement
 
-### Information
+#### Information
 
-### ArticleBDE
+#### ArticleBDE
 
-### ArticleFormation
+#### ArticleFormation
 
-### CV
+#### CV
 - id : Interger ()
 - utilisateur : Utilisateur ()
 - email : String (64)
@@ -59,11 +63,11 @@
 - formation : Formation       # TODO
 - projet : Projet ()          # TODO
 
-### NiveauMaitrise
+#### NiveauMaitrise
 - id : Integer ()
 - niveau_maitrise : String (64)
 
-### Competence
+#### Competence
 - id : Integer ()
 - cv : Cv ()
 - libelle : String (64)
