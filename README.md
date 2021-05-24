@@ -69,15 +69,11 @@
 - formation : Formation       # TODO
 - projet : Projet ()          # TODO
 
-#### NiveauMaitrise
-- id : Integer ()
-- niveau_maitrise : String (64)
-
 #### Competence
 - id : Integer ()
 - cv : Cv ()
 - libelle : String (64)
-- niveau_maitrise : NiveauMaitrise ()
+- niveau_maitrise : Integer ()
 - experience : Experience ()         # TODO
 - formation : Formation ()           # TODO
 - projet : Projet ()                 # TODO
