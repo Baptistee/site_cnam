@@ -19,7 +19,13 @@
       <img src="https://img.shields.io/badge/School-CNAM-red">
   </a>
   <a href="">
-    <img src="https://img.shields.io/badge/Version-0.1-yellow">
+    <img src="https://img.shields.io/badge/Student-Baptiste Blanchet-yellow">
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/badge/Student-Julien Hermange-yellow">
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/badge/Student-Aloîs Bruccoleri-yellow">
   </a>
 </p>
 
