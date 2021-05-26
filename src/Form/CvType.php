@@ -21,6 +21,7 @@ class CvType extends AbstractType
             ))
             ->add('lien_site')
             ->add('bio')
+            ->add('public')
         ;
     }
 

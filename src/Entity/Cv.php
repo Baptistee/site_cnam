@@ -7,7 +7,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=CvRepository::class)
+ * @ORM\Entity(repositoryClass="App\Repository\CvRepository")
  */
 class Cv
 {
@@ -59,6 +59,11 @@ class Cv
      * @ORM\Column(type="string", length=1028)
      */
     private $bio;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $public;
 
     public function __construct()
     {
@@ -186,5 +191,17 @@ class Cv
             $this->email,
             $this->bio
         );
+    }
+
+    public function getPublic(): ?bool
+    {
+        return $this->public;
+    }
+
+    public function setPublic(bool $public): self
+    {
+        $this->public = $public;
+
+        return $this;
     }
 }
