@@ -1,0 +1,19 @@
+Super admin :
+login : superadmin
+mdp :    rootadmin
+
+admin :
+login : admin
+mdp : adminroot
+
+Intervenant :
+login : intervenant
+mdp : intervenant
+
+bde :
+login : bde
+mdp : bdeadmin
+
+etudiant :
+login :
+mdp :
