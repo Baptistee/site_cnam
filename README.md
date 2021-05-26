@@ -89,6 +89,28 @@
 
 ---
 
+### Répartition des tâches
+
+**Aloîs**
+- TODO
+
+**Baptiste**
+- Je me suis occupé de la partie création d'un CV
+  - Création d'un CV pour un utilisateur connecté
+  - Modification du CV pour l'utilisateur
+  - Suppréssion du CV pour l'utilisateur
+  - Ajout de compétences au CV
+  - Modification de compétences du CV
+  - Suppression de compétences du CV
+- Gérer la partie "Mettre en ligne le site"
+  - Ajouter la BDD en ligne
+  - Ajouter le code en ligne
+
+**Julien**
+- TODO
+
+---
+
 ### Base de données
 
 #### Utilisateur
