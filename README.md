@@ -102,7 +102,18 @@
 
 #### Promo
 
+#### Image
+- id : Integer ()
+- titre : varchar (255)
+- lien : varchar (2055)
+
 #### Projet
+- id : Integer ()
+- titre : varchar (255)
+- description : varchar (1028)
+- date_debut : Date ()
+- date_fin : Date ()
+- photo : Image ()
 
 #### Evenement
 - id : Integer ()
@@ -124,13 +135,13 @@
 #### CV
 - id : Interger ()
 - **utilisateur** : Utilisateur ()
-- email : String (64)
-- adresse : String (255)
-- telephone : String (12)
+- email : varchar (64)
+- adresse : varchar (255)
+- telephone : varchar (12)
 - date_anniversaire : Date ()
-- lien_site : String (255)
+- lien_site : varchar (255)
 - **competence** : Competence ()
-- langue : String ()          # TODO
+- langue : varchar ()         # TODO
 - bio : String (1028)
 - experience : Experience     # TODO
 - formation : Formation       # TODO
