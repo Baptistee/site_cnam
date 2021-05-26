@@ -106,7 +106,7 @@
   - Ajout d'une table Evenement dans la base de donnée
   - Affichage de la liste des événement
   - Modfication d'un événement
-  - Supprésion d'un événement
+  - Suppression d'un événement
   - Déplacement de l'événement directement dans le calendrier avec mise à jour de la base de donnée
 
 **Baptiste**
