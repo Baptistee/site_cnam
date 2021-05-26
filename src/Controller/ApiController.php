@@ -8,6 +8,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use DateTime;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 
 class ApiController extends AbstractController
@@ -23,6 +25,8 @@ class ApiController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_BDE")
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/api/{id}/edit", name="api_event_edit", methods={"PUT"})
      */
     public function majEvent(?Evenement $evenement,Request $request)
