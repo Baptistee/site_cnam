@@ -61,6 +61,15 @@
 
 ---
 
+### Installation du site
+
+*Cette partie décrit le processus d'installation du site web en local.*
+
+1.
+
+
+---
+
 ### Fonctionnalités
 
 **Administration**
@@ -91,8 +100,14 @@
 
 ### Répartition des tâches
 
-**Aloîs**
-- TODO
+**Aloïs**
+- Je me suis occupé de la partie création du calendrier
+  - Intégration de fullCalendar
+  - Ajout d'une table Evenement dans la base de donnée
+  - Affichage de la liste des événement
+  - Modfication d'un événement
+  - Suppression d'un événement
+  - Déplacement de l'événement directement dans le calendrier avec mise à jour de la base de donnée
 
 **Baptiste**
 - Je me suis occupé de la partie création d'un CV
@@ -107,7 +122,13 @@
   - Ajouter le code en ligne
 
 **Julien**
-- TODO
+- je me suis occupé de la partie création de compte
+  - Inscription sur le site
+  - Connexion sur le site
+  - Gestion des utilisateurs pour le rôle admin
+  - Cryptage du mot de passe
+- Création d'un article
+  - CRUD en fonction des rôles
 
 ---
 
