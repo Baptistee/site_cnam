@@ -3,9 +3,45 @@
 {% block body %}
 
 <h1> Ajouter mon CV </h1>
-
+<div>
+<p>Les champs précédés d'une * sont obligatoires</p>
+</div>
 {{ form_start(form) }}
-{{ form_widget(form) }}
+<div>
+    {{ form_label(form.email, '*Email : ') }}
+    {{ form_errors(form.email) }}
+    {{ form_widget(form.email) }}
+</div>
+<div>
+    {{ form_label(form.adresse, 'Adresse (n° de rue, ville, CP) : ') }}
+    {{ form_errors(form.adresse) }}
+    {{ form_widget(form.adresse) }}
+</div>
+<div>
+    {{ form_label(form.telephone, 'Téléphone : ') }}
+    {{ form_errors(form.telephone) }}
+    {{ form_widget(form.telephone) }}
+</div>
+<div>
+    {{ form_label(form.date_anniversaire, 'Date de naissance : ') }}
+    {{ form_errors(form.date_anniversaire) }}
+    {{ form_widget(form.date_anniversaire) }}
+</div>
+<div>
+    {{ form_label(form.lien_site, 'Portfolio : ') }}
+    {{ form_errors(form.lien_site) }}
+    {{ form_widget(form.lien_site) }}
+</div>
+<div>
+    {{ form_label(form.bio, '*Biographie : ') }}
+    {{ form_errors(form.bio) }}
+    {{ form_widget(form.bio) }}
+</div>
+<div>
+    {{ form_label(form.public, 'Cocher pour rendre le CV publique : ') }}
+    {{ form_errors(form.public) }}
+    {{ form_widget(form.public) }}
+</div>
 <button type="submit" class="btn btn-success">Ajouter</button>
 {{ form_end(form) }}
 
