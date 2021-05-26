@@ -100,8 +100,14 @@
 
 ### Répartition des tâches
 
-**Aloîs**
-- TODO
+**Aloïs**
+- Je me suis occupé de la partie création du calendrier
+  - Intégration de fullCalendar
+  - Ajout d'une table Evenement dans la base de donnée
+  - Affichage de la liste des événement
+  - Modfication d'un événement
+  - Supprésion d'un événement
+  - Déplacement de l'événement directement dans le calendrier avec mise à jour de la base de donnée
 
 **Baptiste**
 - Je me suis occupé de la partie création d'un CV
