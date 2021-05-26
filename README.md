@@ -61,6 +61,15 @@
 
 ---
 
+### Installation du site
+
+*Cette partie décrit le processus d'installation du site web en local.*
+
+1.
+
+
+---
+
 ### Fonctionnalités
 
 **Administration**
