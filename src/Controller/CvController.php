@@ -32,7 +32,9 @@ class CvController extends AbstractController
     public function community(CvRepository $cv)
     {
         return $this->render("cv/community.html.twig", [
-            'cvs' => $cv->findAll()
+            'cvs' => $this->getDoctrine()
+                ->getRepository(Cv::class)
+                ->findby(['public' => 1])
         ]);
     }
     
