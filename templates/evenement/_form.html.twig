@@ -1,44 +1,4 @@
 {{ form_start(form) }}
-<div>
-    {{ form_label(form.titre, 'Nom de l\'événement : ') }}
-    {{ form_errors(form.titre) }}
-    {{ form_widget(form.titre) }}
-</div>
-<div>
-    {{ form_label(form.debut, 'Date et heure du début de l\'événement : ') }}
-    {{ form_errors(form.debut) }}
-    {{ form_widget(form.debut) }}
-</div>
-<div>
-    {{ form_label(form.fin, 'Date et heure du fin de l\'événement : ') }}
-    {{ form_errors(form.fin) }}
-    {{ form_widget(form.fin) }}
-</div>
-<div>
-    {{ form_label(form.description, 'Description : ') }}
-    {{ form_errors(form.description) }}
-    {{ form_widget(form.description) }}
-</div>
-<div>
-    {{ form_label(form.journee_complete, 'Cocher pour dire si l\'événement dure la journée entière : ') }}
-    {{ form_errors(form.journee_complete) }}
-    {{ form_widget(form.journee_complete) }}
-</div>
-<div>
-    {{ form_label(form.couleur_fond, 'Couleur de fond : ') }}
-    {{ form_errors(form.couleur_fond) }}
-    {{ form_widget(form.couleur_fond) }}
-</div>
-<div>
-    {{ form_label(form.couleur_bordure, 'Couleur de la bordure : ') }}
-    {{ form_errors(form.couleur_bordure) }}
-    {{ form_widget(form.couleur_bordure) }}
-</div>
-<div>
-    {{ form_label(form.couleur_texte, 'Couleur du texte : ') }}
-    {{ form_errors(form.couleur_texte) }}
-    {{ form_widget(form.couleur_texte) }}
-</div>
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
 {{ form_end(form) }}
