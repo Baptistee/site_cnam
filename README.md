@@ -122,6 +122,7 @@
   - Mise en place d'un processus pour mettre à jour la BDD
   - Mettre en ligne le site Symfony
   - Mise en place d'un processus automatiser le deploiement du site en ligne
+- Ajout du template Xwin sur le projet
 
 **Julien**
 - je me suis occupé de la partie création de compte
