@@ -117,9 +117,6 @@
   - Ajout de compétences au CV
   - Modification de compétences du CV
   - Suppression de compétences du CV
-- Gérer la partie "Mettre en ligne le site"
-  - Ajouter la BDD en ligne
-  - Ajouter le code en ligne
 - Partie publication du site web et mise en place de la BDD
   - Pouvoir se connecter sur une BDD en ligne
   - Mise en place d'un processus pour mettre à jour la BDD
