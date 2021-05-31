@@ -32,7 +32,7 @@
 ---
 
 ### Organisation et architecture du site
-- Nous avons gardé l'architecture proposé par le projet de base Symfony + quelques ajouts. Nous avons donc organisé nos fichiers comme conseillé par Symfony (les controlleurs dans le dossier Controllers, etc ...)
+- Nous avons gardé l'architecture proposé par le projet de base Symfony + quelques ajouts. Nous avond donc organisé nos fichiers comme conseillé par Symfony (les controlleurs dans le dossier Controllers, etc ...)
 - Ajout d'un dossier Enum dans src permettant de ranger des classes abstraites avec des méthodes statiques pour gérer des Enum dans l'ensemble du code
 - Nous avons organisé les vues dans le dossier templates. Ce dossier contient des sous-dossiers permettant d'organiser nos vues en fonction des cas d'utilisations. Cela nous permet de trouver le fichier souhaité plus rapidement avec une telle organisation
 - Les routes sont définies dans le code des controllers (au lieu de routes.yaml)
@@ -65,9 +65,13 @@
 
 *Cette partie décrit le processus d'installation du site web en local.*
 
-1.
+1. Faire un git clone du projet dans un dossier
+2. Entrer la commande *composer update* afin de mettre à jour les requires
+3. Lancer wampserver64 
+4. Entrer la commande *symfony server:start* pour lancer le serveur 
 
-
+- Pour se connecter à la base de données en ligne : https://phpmyadmin.alwaysdata.com/ avec comme identifiants username : baptiste_admin mdp : QuatreFois0
+- Pour créer la base de données en local : sous phpmyadmin en local importer le fichier SQL situé dans le dossier migration.
 ---
 
 ### Fonctionnalités
@@ -117,12 +121,9 @@
   - Ajout de compétences au CV
   - Modification de compétences du CV
   - Suppression de compétences du CV
-- Partie publication du site web et mise en place de la BDD
-  - Pouvoir se connecter sur une BDD en ligne
-  - Mise en place d'un processus pour mettre à jour la BDD
-  - Mettre en ligne le site Symfony
-  - Mise en place d'un processus automatiser le deploiement du site en ligne
-- Ajout du template Xwin sur le projet
+- Gérer la partie "Mettre en ligne le site"
+  - Ajouter la BDD en ligne
+  - Ajouter le code en ligne
 
 **Julien**
 - je me suis occupé de la partie création de compte
