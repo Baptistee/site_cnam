@@ -95,7 +95,7 @@ class ArticleController extends AbstractController
         $article = $article->find($id);
         if (!$article) {
             throw $this->createNotFoundException(
-                'There are no articles with the following id: ' . $id
+                'Aucun article comportant lid ' . $id
             );
         }
         $em->remove($article);
@@ -113,7 +113,7 @@ class ArticleController extends AbstractController
         $article = $article->find($id);
         if (!$article) {
             throw $this->createNotFoundException(
-                'There are no articles with the following id: ' . $id
+                'Aucun article comportant lid: ' . $id
             );
         }
         $form = $this->createFormBuilder($article)
