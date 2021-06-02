@@ -315,3 +315,28 @@
     Si vous avez les permissions admin vous pouvez accéder à la gestion des utilisateurs notamment leurs roles : a correspond à admin, b à intervenant, c à BDE et d à étudiant.
   <br>
 </h3>
+
+
+---
+
+### Liste Utilisateur
+
+Super admin :
+login : superadmin
+mdp :    rootadmin
+
+admin :
+login : admin
+mdp : adminroot
+
+Intervenant :
+login : intervenant
+mdp : intervenant
+
+bde :
+login : bde
+mdp : bdeadmin
+
+etudiant : 
+login : etudiant
+mdp : etudiantadmin
