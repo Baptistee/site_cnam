@@ -321,22 +321,22 @@
 
 ### Liste Utilisateur
 
-- Super admin :
+Super admin :
 login : superadmin
 mdp :    rootadmin
 
-- admin :
+admin :
 login : admin
 mdp : adminroot
 
-- Intervenant :
+Intervenant :
 login : intervenant
 mdp : intervenant
 
-- bde :
+bde :
 login : bde
 mdp : bdeadmin
 
-- etudiant : 
+etudiant : 
 login : etudiant
 mdp : etudiantadmin
