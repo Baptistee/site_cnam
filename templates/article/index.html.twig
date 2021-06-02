@@ -20,6 +20,7 @@
                 <tr>
                     <th>Titre</th>
                     <th>Description</th>
+                    <th>Afficher<th>
                     {% if is_granted('ROLE_BDE') %}
                     <th>Supprimer</th>
                     <th>Mettre à jour</th>
@@ -31,6 +32,7 @@
                     <tr>
                         <td>{{ article.titre }}</td>
                         <td>{{ article.description | slice(0, 20) }}...</td>
+                        <td><a href="article/{{ article.id }}">Afficher</a></td>
                         {% if is_granted('ROLE_BDE') %}
                         <td><a href="article/supprimer/{{ article.id }}">Supprimer</a></td>
                         <td><a href="article/modifier/{{ article.id }}">Mettre à jour</a></td>
