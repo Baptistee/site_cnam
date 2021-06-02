@@ -9,7 +9,7 @@
 
 <div id='calendar'></div>
 
-  <style>
+  {# <style>
     #calendar {
       max-width: 1100px;
       margin: auto;
@@ -19,18 +19,16 @@
       margin:10px;
     }
 
-  </style>
+  </style> #}
 
-
-
-  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.css' rel='stylesheet' />
-  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.js'></script>
 {% endblock %}
   
 
   
 
 {% block javascripts %}  
+  
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.js'></script>
 <script>
 
   document.addEventListener('DOMContentLoaded', function() {
