@@ -25,7 +25,7 @@ class ApiController extends AbstractController
     }
 
     /**
-     * @Security("is_granted('ROLE_ADMIN') or is_granted('ROLE_BDE')")
+     * @Security("IsGranted('ROLE_ADMIN') or IsGranted('ROLE_BDE')")
      * @Route("/api/{id}/edit", name="api_event_edit", methods={"PUT"})
      */
     public function majEvent(?Evenement $evenement,Request $request)
