@@ -45,7 +45,7 @@ class EvenementController extends AbstractController
     }
 
     /**
-     * @IsGranted("ROLE_BDE")
+     * @Security("is_granted('ROLE_ADMIN') or is_granted('ROLE_BDE')")
      * @Route("/new", name="evenement_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
@@ -79,7 +79,7 @@ class EvenementController extends AbstractController
     }
 
     /**
-     * @IsGranted("ROLE_BDE")
+     * @Security("is_granted('ROLE_ADMIN') or is_granted('ROLE_BDE')")
      * @Route("/{id}/edit", name="evenement_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Evenement $evenement): Response
@@ -100,7 +100,7 @@ class EvenementController extends AbstractController
     }
 
     /**
-     * @IsGranted("ROLE_BDE")
+     * @Security("is_granted('ROLE_ADMIN') or is_granted('ROLE_BDE')")
      * @Route("/{id}", name="evenement_delete", methods={"POST"})
      */
     public function delete(Request $request, Evenement $evenement): Response

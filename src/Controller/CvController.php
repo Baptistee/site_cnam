@@ -29,7 +29,7 @@ class CvController extends AbstractController
     /**
      * @Route("/cv/community", name="cv-community")
      */
-    public function community(CvRepository $cv)
+    public function community()
     {
         return $this->render("cv/community.html.twig", [
             'cvs' => $this->getDoctrine()
@@ -40,6 +40,7 @@ class CvController extends AbstractController
     
     
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/cv", name="cv")
      */
     public function indexCv()
@@ -53,6 +54,7 @@ class CvController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/cv/ajouter", name="cv-ajouter")
      */
     public function ajouter(Request $request, ObjectManager $manager)
@@ -87,6 +89,7 @@ class CvController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/cv/modifier", name="cv-modifier")
      */
     public function modifier(Request $request)
@@ -112,6 +115,7 @@ class CvController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/cv/supprimer", name="cv-supprimer")
      */
     public function supprimer()
@@ -134,6 +138,7 @@ class CvController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/cv/competence", name="competences")
      */
     public function indexCompetences()
@@ -148,6 +153,7 @@ class CvController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/cv/competence/ajouter", name="competence-ajouter")
      */
     public function ajouterCompetence(Request $request, ObjectManager $manager)
@@ -178,6 +184,7 @@ class CvController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/cv/modifier/{id}", name="competence-modifier")
      */
     public function modifierCompetence(Competence $competence, Request $request)
@@ -200,6 +207,7 @@ class CvController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/cv/competence/supprimer/{id}", name="competence-supprimer")
      */
     public function supprimerCompetence(Competence $competence)

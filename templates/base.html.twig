@@ -27,6 +27,8 @@
             <link rel="stylesheet" type="text/css" href="{{ asset('loader.css'            ,'xwin-css') }}">
             <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap.min.css'     ,'xwin-css') }}">
 
+            <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.css' rel='stylesheet' />
+
             <link rel="icon" href="{{ asset('favicon.png', 'xwin-images') }}">
 
         {% endblock %}
@@ -54,6 +56,8 @@
             <script src="{{ asset('revolution.extension.video.min.js'          ,'xwin-js') }}"></script>
             <script src="{{ asset('wow.min.js'                                 ,'xwin-js') }}"></script>
             <script src="{{ asset('functions.js'                               ,'xwin-js') }}"></script>
+
+            <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.js'></script>
 
         {% endblock %}
 
@@ -116,6 +120,7 @@
                             {% if not app.user %}
                                 <li><a href="/formation">Formation</a></li>
                                 <li><a href="/article">Article</a></li>
+                                <li><a href="/calendrier">Calendrier</a></li>
                                 <li><a href="/cv/community">CV</a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Connexion</a>
@@ -148,7 +153,7 @@
                                             <ul class="menu-col">
                                                 <li><a href="#">Notes</a></li>
                                                 <li><a href="#">Abscences</a></li>
-                                                <li><a href="#">CV</a></li>
+                                                <li><a href="/cv">CV</a></li>
                                             </ul>
                                             </div>
                                         </div>
@@ -162,6 +167,16 @@
                                             </ul>
                                             </div>
                                         </div>
+                                        {% if is_granted('ROLE_BDE') %}
+                                            <div class="col-menu col-md-3">
+                                            <h6 class="title">BDE</h6>
+                                            <div class="content">
+                                            <ul class="menu-col">
+                                                <li><a href="/article/ajouter">Créer un article</a></li>
+                                            </ul>
+                                            </div>
+                                        </div>
+                                        {% endif %}
                                         <div class="col-menu col-md-3">
                                             <h6 class="title">Administration</h6>
                                             <div class="content">
@@ -172,17 +187,6 @@
                                             </ul>
                                             </div>
                                         </div>
-                                        <div class="col-menu col-md-3">
-                                            <h6 class="title">Autres</h6>
-                                            <div class="content">
-                                            <ul class="menu-col">
-                                                <li><a href="#">Gallerie</a></li>
-                                                <li><a href="#">Faq</a></li>
-                                                <li><a href="#">404</a></li>
-                                            </ul>
-                                            </div>
-                                        </div>
-                                        </div>
                                     </li>
                                     </ul>
                                 </li>
@@ -191,6 +195,97 @@
 
                         </ul>
                     </div>
+                </div>
+
+                <div class="sidebar_menu">
+                    <nav class="pushmenu pushmenu-right">
+                        <a class="push-logo" href="/"><img src="{{ asset('logo-main.png'  ,'images') }}" alt="logo"></a>
+                        
+                        <ul class="push_nav centered">
+
+                            {% if not app.user %}
+                                <li><a href="/formation"><span>01.</span>Formation</a></li>
+                                <li><a href="/article"><span>02.</span>Article</a></li>
+                                <li><a href="/cv/community"><span>03.</span>CV</a></li>
+
+                                <li class="dropdown clearfix">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><span>04.</span>Connexion</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/connexion">Se connecter</a></li>
+                                        <li><a href="/inscription">S'inscrire</a></li>
+                                    </ul>
+                                </li>
+                            {% endif %}
+
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <li class="dropdown clearfix">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><span>A.</span>Admin</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/admin/utilisateurs">Gestion utilisateurs</a></li>
+                                        <li><a href="#">Gestion autres</a></li>
+                                    </ul>
+                                </li>
+                            {% endif %}
+
+                            {% if app.user %}
+
+                                <li class="dropdown clearfix">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><span>01.</span>Etudiant</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Notes</a></li>
+                                        <li><a href="#">Abscences</a></li>
+                                        <li><a href="/cv">CV</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown clearfix">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><span>02.</span>Classe</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/article">Article</a></li>
+                                        <li><a href="/calendrier">Calendrier</a></li>
+                                        <li><a href="/projet">Projets</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown clearfix">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><span>03.</span>Administration</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Informations</a></li>
+                                        <li><a href="#">Carte étudiant</a></li>
+                                        <li><a href="#"></a>Covid 19</li>
+                                    </ul>
+                                </li>
+
+                                {% if is_granted('ROLE_BDE') %}
+
+                                    <li class="dropdown clearfix">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><span>04.</span>BDE</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/article/ajouter">Créer un article</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li><a href="/formation"><span>05.</span>Déconnexion</a></li>
+
+                                {% else %}
+                                
+                                    <li><a href="/formation"><span>04.</span>Déconnexion</a></li>
+                                
+                                {% endif %}
+                                
+
+                            {% endif %}
+
+                        </ul>
+
+                        <div class="clearfix"></div>
+                        <ul class="social_icon black top25 bottom20">
+                            <li><a href="#." class="facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#." class="twitter"><i class="icon-twitter4"></i></a></li>
+                            <li><a href="#." class="instagram"><i class="icon-instagram"></i></a></li>
+                        </ul>
+                        
+                    </nav>
                 </div>
                 
             </nav>
@@ -219,12 +314,12 @@
             </div>
         </section>
 
-
-
+        <br>
         <div class="container">
             {% block body %}
             {% endblock %}
         </div>
+        <br>
 
         <!--FOOTER-->
         <footer class="padding-top">
