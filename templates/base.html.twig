@@ -162,6 +162,16 @@
                                             </ul>
                                             </div>
                                         </div>
+                                        {% if is_granted('ROLE_ADMIN') %}
+                                            <div class="col-menu col-md-3">
+                                            <h6 class="title">BDE</h6>
+                                            <div class="content">
+                                            <ul class="menu-col">
+                                                <li><a href="/article/ajouter">Créer un article</a></li>
+                                            </ul>
+                                            </div>
+                                        </div>
+                                        {% endif %}
                                         <div class="col-menu col-md-3">
                                             <h6 class="title">Administration</h6>
                                             <div class="content">
