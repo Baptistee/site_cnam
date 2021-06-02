@@ -65,9 +65,13 @@
 
 *Cette partie décrit le processus d'installation du site web en local.*
 
-1.
+1. Faire un git clone du projet dans un dossier
+2. Entrer la commande *composer update* afin de mettre à jour les requires
+3. Lancer wampserver64 
+4. Entrer la commande *symfony server:start* pour lancer le serveur 
 
-
+- Pour se connecter à la base de données en ligne : https://phpmyadmin.alwaysdata.com/ avec comme identifiants username : baptiste_admin mdp : QuatreFois0
+- Pour créer la base de données en local : sous phpmyadmin en local importer le fichier SQL situé dans le dossier migration.
 ---
 
 ### Fonctionnalités
