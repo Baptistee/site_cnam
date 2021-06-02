@@ -2024,6 +2024,10 @@ var components = {
             "main": "jquery-built.js"
         },
         {
+            "name": "fullcalendar",
+            "main": "fullcalendar-built.js"
+        },
+        {
             "name": "moment",
             "main": "moment-built.js"
         }
