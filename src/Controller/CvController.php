@@ -29,7 +29,7 @@ class CvController extends AbstractController
     /**
      * @Route("/cv/community", name="cv-community")
      */
-    public function community(CvRepository $cv)
+    public function community()
     {
         return $this->render("cv/community.html.twig", [
             'cvs' => $this->getDoctrine()
