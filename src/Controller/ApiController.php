@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 use App\Entity\Evenement;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,6 +25,7 @@ class ApiController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_BDE")
      * @IsGranted("ROLE_ADMIN")
      * @Route("/api/{id}/edit", name="api_event_edit", methods={"PUT"})
      */
