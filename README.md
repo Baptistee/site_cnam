@@ -321,22 +321,42 @@
 
 ### Liste Utilisateur
 
-Super admin :
-login : superadmin
-mdp :    rootadmin
+<div>
+  Super Admin:
+<ul>
+  <li>login : superadmin</li>
+  <li>mdp : rootadmin</li>
+</ul>
+</div>
 
-admin :
-login : admin
-mdp : adminroot
+<div>
+  Admin:
+<ul>
+  <li>login : admin</li>
+  <li>mdp : adminroot</li>
+</ul>
+</div>
 
-Intervenant :
-login : intervenant
-mdp : intervenant
+<div>
+  Intervenant :
+<ul>
+  <li>login : intervenant</li>
+  <li>mdp : intervenant</li>
+</ul>
+</div>
 
-bde :
-login : bde
-mdp : bdeadmin
+<div>
+  BDE :
+<ul>
+  <li>login : bde</li>
+  <li>mdp : bdeadmin</li>
+</ul>
+</div>
 
-etudiant : 
-login : etudiant
-mdp : etudiantadmin
+<div>
+  Etudiant :
+<ul>
+  <li>login : etudiant</li>
+  <li>mdp : etudiantadmin</li>
+</ul>
+</div>
